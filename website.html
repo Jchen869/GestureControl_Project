@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Tracking Webcam</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hand Tracking Webcam</h1>
+            <p>Live webcam feed for hand tracking demonstration</p>
+        </header>
+        
+        <div class="video-container">
+            <div class="video-wrapper">
+                <video id="webcam" autoplay playsinline></video>
+                <canvas id="overlay"></canvas>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="startBtn">Start Camera</button>
+            <button id="stopBtn" disabled>Stop Camera</button>
+        </div>
+        
+        <div class="status">
+            <p id="status">Click "Start Camera" to begin</p>
+        </div>
+        
+        <div class="info">
+            <h3>About This Demo</h3>
+            <p>This web application demonstrates webcam access for hand tracking. In a full implementation, this would:</p>
+            <ul>
+                <li>Capture live video from your webcam</li>
+                <li>Process each frame using MediaPipe for hand detection</li>
+                <li>Draw hand landmarks and connections on the video feed</li>
+                <li>Track hand movements in real-time</li>
+            </ul>
+            <p><strong>Note:</strong> Make sure to allow camera access when prompted by your browser.</p>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/webcam.js') }}"></script>
+</body>
+</html>
